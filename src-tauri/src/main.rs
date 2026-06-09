@@ -7,7 +7,9 @@ fn main() {
   tauri::Builder::default()
     .invoke_handler(tauri::generate_handler![
         commands::download_audio,
-        commands::apply_ffmpeg_effects
+        commands::apply_ffmpeg_effects,
+        commands::get_audio_devices,
+        commands::play_sound
     ])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
